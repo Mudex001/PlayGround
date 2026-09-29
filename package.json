@@ -1,0 +1,12 @@
+{
+  "name": "playground-fullstack",
+  "version": "1.0.0",
+  "description": "Fullstack TaskBoard website - static frontend + Node API, zero dependencies",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

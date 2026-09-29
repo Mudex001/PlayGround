@@ -1,0 +1,20 @@
+[
+  {
+    "id": "seed-1",
+    "title": "Explore the TaskBoard API",
+    "completed": false,
+    "createdAt": "2026-09-29T17:52:06.762Z"
+  },
+  {
+    "id": "seed-2",
+    "title": "Add your first task below",
+    "completed": false,
+    "createdAt": "2026-09-29T17:52:06.762Z"
+  },
+  {
+    "id": "seed-3",
+    "title": "Toggle a task complete",
+    "completed": true,
+    "createdAt": "2026-09-29T17:52:06.762Z"
+  }
+]
