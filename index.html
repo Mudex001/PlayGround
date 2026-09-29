@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Crypto Pulse — BTC · ETH · BNB Live Prices</title>
+<meta name="description" content="Live Bitcoin, Ethereum and BNB prices with 24h stats and charts. Auto-refreshing crypto dashboard." />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>₿</text></svg>" />
+</head>
+<body>
+  <div class="bg"></div>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">₿</span>
+      <div>
+        <h1>Crypto Pulse</h1>
+        <p>BTC · ETH · BNB live tracker</p>
+      </div>
+    </div>
+    <div class="controls">
+      <select id="currency" aria-label="Fiat currency">
+        <option value="USDT" selected>USD ($)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="GBP">GBP (£)</option>
+      </select>
+      <select id="refreshRate" aria-label="Refresh interval">
+        <option value="15000">15s</option>
+        <option value="30000" selected>30s</option>
+        <option value="60000">60s</option>
+        <option value="0">Paused</option>
+      </select>
+      <button id="refreshBtn" class="btn">↻ Refresh</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="statusbar">
+      <span id="statusDot" class="dot live"></span>
+      <span id="statusText">Connecting…</span>
+      <span class="sep">·</span>
+      <span id="updatedAt">—</span>
+      <span class="sep">·</span>
+      <span id="source">source: —</span>
+      <span class="countdown"><span id="countdownBar"></span></span>
+    </div>
+
+    <div id="error" class="error hidden"></div>
+
+    <section id="cards" class="cards">
+      <!-- cards rendered by JS -->
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Market overview</h2>
+        <div class="tabs">
+          <button data-range="24h" class="tab active">24H</button>
+          <button data-range="7d" class="tab">7D</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Asset</th><th>Price</th><th>24h %</th><th>7d %</th><th>Turnover (24h)</th><th>Market Cap</th><th>Trend (24h)</th></tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+      <p class="footnote">Prices via CoinLore with Coinbase / CoinGecko fallback — no API key required. BTC &amp; ETH charts use hourly exchange candles; BNB trend is estimated from its 24h move.</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Crypto Pulse · static site · auto-refreshes · built for GitHub Pages / any static host</span>
+  </footer>
+
+<script src="app.js"></script>
+</body>
+</html>
